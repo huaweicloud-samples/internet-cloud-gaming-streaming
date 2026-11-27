@@ -1,0 +1,17 @@
+# 复制为 terraform.tfvars 并填入真实值（勿提交含真实密码的文件）
+# 凭据请从环境变量注入，不要写进本文件：
+#   export HW_ACCESS_KEY="<HW_ACCESS_KEY>"
+#   export HW_SECRET_KEY="<HW_SECRET_KEY>"
+
+region               = "cn-north-4"
+image_id             = "<Ubuntu-GPU公共镜像ID，例如 72b9893f-... (Ubuntu 20.04 with GRID Driver 11.1)>"
+flavor_id            = "g6v.2xlarge.4"
+instance_name        = "Ubuntu-GPU-GAMING"
+availability_zone    = "cn-north-4a"
+subnet_id            = "<subnet-xxxxxxxx>"
+assign_static_ip     = true
+ingress_cidr         = "1.2.3.4/32"     # 强烈建议限定为你的出口 IP/32
+admin_password       = "<root强密码：8-26位，含大小写+数字+特殊字符中至少三类>"
+system_disk_type     = "GPSSD"
+volume_size          = 550
+eip_bandwidth_size   = 5
